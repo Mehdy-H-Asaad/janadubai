@@ -1,5 +1,9 @@
+// COMPONENTS
 export * from "./components/ContactContent";
-export * from "./data/index";
 export * from "./components/ContactForm";
+
+// DATA
+export * from "./data/index";
+
+// HOOKS
 export * from "./hooks/useContactForm";
-export * from "./types/index";
