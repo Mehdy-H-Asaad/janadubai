@@ -1,6 +1,6 @@
 import MainTitle from "@/components/MainTitle";
 import { Label } from "@/components/ui/label";
-import { contactDetails, ContactForm, useContactForm } from "..";
+import { contactDetails, ContactForm, useContactForm } from "../index";
 
 export const ContactContent = () => {
 	const { errors, handlePhoneInput, handleSubmit, onSumbit, register } =

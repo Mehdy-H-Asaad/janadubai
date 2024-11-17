@@ -9,9 +9,8 @@ export const login = async (loginData: TLoginDTO) => {
 		);
 
 		localStorage.setItem("token", data.token);
-
 		return data;
 	} catch (error: any) {
-		throw new Error(error.message);
+		throw new Error(error.response.detail);
 	}
 };

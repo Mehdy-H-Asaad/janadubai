@@ -1,7 +1,14 @@
 import axios from "axios";
 
+export const axiosPublic = axios.create({
+	baseURL: "https://web-mown68cp2cv9.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+	headers: {
+		"Content-Type": "application/json",
+	},
+});
+
 export const axiosClient = axios.create({
-	baseURL: "http://26.246.132.2:8000",
+	baseURL: "https://web-mown68cp2cv9.up-de-fra1-k8s-1.apps.run-on-seenode.com",
 	headers: {
 		"Content-Type": "application/json",
 	},

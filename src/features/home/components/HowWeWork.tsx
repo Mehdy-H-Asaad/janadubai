@@ -1,16 +1,34 @@
 import MainTitle from "@/components/MainTitle";
 import { HOW_WE_WORK_DATA } from "../data";
+import { motion } from "framer-motion";
 
 export const HowWeWork = () => {
 	return (
 		<section className="py-20 bg-primary-black">
-			<MainTitle
-				heading="HOW WE WORK"
-				subHeading="Proven Process for the best result."
-			/>
-
+			<motion.div
+				initial={{ opacity: 0, y: 0 }}
+				whileInView={{ opacity: 1, y: -50 }}
+				transition={{
+					duration: 0.5,
+				}}
+				viewport={{ once: true }}
+			>
+				<MainTitle
+					heading="HOW WE WORK"
+					subHeading="Proven Process for the best result."
+				/>
+			</motion.div>
 			<div className="container">
-				<div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-16">
+				<motion.div
+					initial={{ opacity: 0, y: 0 }}
+					whileInView={{ opacity: 1, y: -50 }}
+					transition={{
+						duration: 0.5,
+						delay: 0.1,
+					}}
+					viewport={{ once: true }}
+					className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-8 gap-y-16"
+				>
 					{HOW_WE_WORK_DATA.map(item => {
 						return (
 							<div className="text-white border-[3px] border-[#ffffff26] relative p-5">
@@ -26,7 +44,7 @@ export const HowWeWork = () => {
 							</div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

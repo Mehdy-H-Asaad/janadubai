@@ -14,7 +14,7 @@ import {
 } from "@/shared/constants";
 const Footer = () => {
 	return (
-		<section className="bg-primary-black pt-5 text-white">
+		<section className="bg-primary-black pt-5 text-white border-t border-gray-700">
 			<div className="container">
 				<div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7 ">
 					<div className="mb-8">
@@ -73,7 +73,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div className=" border-t-[1px] border-secondary-grey ">
+			<div className=" border-t  border-gray-700 ">
 				<div className="container flex p-8 gap-4 items-center justify-between">
 					<div>
 						2024 CREATED BY {""}

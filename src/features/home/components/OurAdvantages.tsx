@@ -1,12 +1,20 @@
 import MainTitle from "@/components/MainTitle";
 import { OUR_ADVANTAGES_DATA } from "../data";
+import { motion } from "framer-motion";
 
 export const OurAdvantages = () => {
 	return (
 		<section className="py-20 bg-black">
 			<div className="container">
 				<div className="flex items-center gap-14 flex-col lg:flex-row lg:gap-9">
-					<div>
+					<motion.div
+						initial={{ opacity: 0, x: -60 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{
+							duration: 1,
+						}}
+						viewport={{ once: true }}
+					>
 						<MainTitle
 							heading="Our advantages"
 							subHeading="Why do people trust our company?"
@@ -18,9 +26,17 @@ export const OurAdvantages = () => {
 							complexity. We guarantee the quality of our work and have many
 							years of experience.
 						</p>
-					</div>
+					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+					<motion.div
+						initial={{ opacity: 0, x: 60 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{
+							duration: 1,
+						}}
+						viewport={{ once: true }}
+						className="grid grid-cols-1 md:grid-cols-2 gap-10"
+					>
 						{OUR_ADVANTAGES_DATA.map(item => {
 							return (
 								<div className="text-white border-[3px] border-[#ffffff26] relative p-5">
@@ -36,7 +52,7 @@ export const OurAdvantages = () => {
 								</div>
 							);
 						})}
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

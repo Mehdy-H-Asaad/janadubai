@@ -1,8 +1,13 @@
 import { useCustomMutation } from "@/hooks/useCustomMutation";
-import { signup } from "../services/signup.service";
+import { signup } from "../index";
 
 export const useSignup = () => {
-	const { mutate: signUp } = useCustomMutation(signup, ["users"]);
+	const { mutate: signUp } = useCustomMutation(
+		signup,
+		["users"],
+		"/",
+		"Welcome!"
+	);
 
 	return { signUp };
 };

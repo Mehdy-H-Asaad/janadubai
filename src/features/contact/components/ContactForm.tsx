@@ -1,5 +1,5 @@
 import { Label } from "@/components/ui/label";
-import { TContactForm } from "..";
+import { TContactForm } from "../types";
 
 export const ContactForm = ({
 	error,

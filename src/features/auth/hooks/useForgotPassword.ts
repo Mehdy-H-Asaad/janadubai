@@ -1,5 +1,5 @@
 import { useCustomMutation } from "@/hooks/useCustomMutation";
-import { forgotPasswordService } from "../services/forgotPassword.service";
+import { forgotPasswordService } from "../index";
 
 export const useForgotPassword = () => {
 	const { mutate: forgotPassword } = useCustomMutation(forgotPasswordService, [

@@ -1,7 +1,4 @@
-import { BsCart3 } from "react-icons/bs";
-import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { IoPersonOutline } from "react-icons/io5";
+import { FaFacebookF, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 export const navLinks = [
 	{
@@ -28,17 +25,9 @@ export const navLinks = [
 		title: "Contact us",
 		path: "/contact",
 	},
-	// {
-	// 	title: <BsCart3 />,
-	// 	path: "/cart",
-	// },
 	{
-		title: <IoMdHeartEmpty />,
-		path: "/favorite",
-	},
-	{
-		title: <IoPersonOutline size={24} />,
-		path: "/login",
+		title: "Dashboard",
+		path: "/dashboard/users/list-users",
 	},
 ];
 
@@ -84,6 +73,10 @@ export const footerSocials = [
 	{
 		title: <FaTiktok size={22} />,
 		path: "https://vm.tiktok.com/ZSFGtEcMv/",
+	},
+	{
+		title: <FaYoutube size={22} />,
+		path: "https://www.youtube.com/channel/UCeGA6ahQK8kmGxVEIuqVvcQ/",
 	},
 ];
 

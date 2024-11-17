@@ -9,7 +9,7 @@ import {
 	FormItem,
 	FormMessage,
 } from "@/components/ui/form";
-import { useForgotPasswordForm } from "../hooks/useForgotPasswordForm";
+import { useForgotPasswordForm } from "../hooks/form/useForgotPasswordForm";
 
 export const ForgotPassword = () => {
 	const { form, onSubmit } = useForgotPasswordForm();
