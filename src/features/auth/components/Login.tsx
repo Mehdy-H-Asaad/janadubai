@@ -20,7 +20,7 @@ import { useLoginForm } from "../index";
 export const Login = () => {
 	const [toggleAuth, setToggleAuth] = useState<boolean>(true);
 
-	const { form, onSubmit, isLoginPending } = useLoginForm();
+	const { loginForm, onSubmit, isLoginPending } = useLoginForm();
 
 	return (
 		<div className="bg-[#1a1a1a] py-20">
@@ -38,17 +38,17 @@ export const Login = () => {
 			<div className="container">
 				<div className="flex flex-col lg:flex-row justify-center items-center gap-20 min-h-[304px]">
 					{toggleAuth ? (
-						<Form {...form}>
+						<Form {...loginForm}>
 							<motion.form
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{ duration: 1 }}
-								onSubmit={form.handleSubmit(onSubmit)}
+								onSubmit={loginForm.handleSubmit(onSubmit)}
 								className="space-y-8 flex flex-col w-full sm:w-fit "
 							>
 								{/* Email Field */}
 								<FormField
-									control={form.control}
+									control={loginForm.control}
 									name="username"
 									render={({ field }) => (
 										<FormItem className="w-full sm:w-96">
@@ -69,7 +69,7 @@ export const Login = () => {
 
 								{/* Password Field */}
 								<FormField
-									control={form.control}
+									control={loginForm.control}
 									name="password"
 									render={({ field }) => (
 										<FormItem className="w-full sm:w-96">

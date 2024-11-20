@@ -16,8 +16,8 @@ export const ListProducts = () => {
 						<Skeleton className="w-60 h-6" />
 						<Skeleton className="w-40 h-6" />
 					</div>
-					{Array.from({ length: 10 }).map(_ => (
-						<div className="flex flex-col gap-5">
+					{Array.from({ length: 10 }).map((_, index) => (
+						<div key={index} className="flex flex-col gap-5">
 							<Skeleton className="w-600 h-3" />
 							<Skeleton className="w-40 h-3" />
 						</div>

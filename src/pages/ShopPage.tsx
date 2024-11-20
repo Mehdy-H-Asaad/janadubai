@@ -1,4 +1,4 @@
-import { Shop } from "@/features/shop";
+import { Shop } from "@/features/product";
 
 export const ShopPage = () => {
 	return <Shop />;

@@ -1,10 +1,14 @@
 import { useCustomQuery } from "@/hooks/useCustomQuery";
 import { getCategoriesService } from "../index";
 
-export const useGetCategories = () => {
+type TUseGetCategories = {
+	type?: string;
+};
+
+export const useGetCategories = ({ type }: TUseGetCategories) => {
 	const { data: categories, isLoading: isLoadingCategories } = useCustomQuery(
-		["categories"],
-		getCategoriesService
+		["categories", type],
+		() => getCategoriesService({ type })
 	);
 
 	return { categories, isLoadingCategories };

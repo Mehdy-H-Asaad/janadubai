@@ -8,6 +8,6 @@ export const deleteCategoryService = async (id: number) => {
 
 		return data;
 	} catch (error: any) {
-		throw new Error(error.message);
+		throw new Error(error.response.data.detail);
 	}
 };

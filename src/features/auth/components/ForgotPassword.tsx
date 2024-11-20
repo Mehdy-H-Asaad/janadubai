@@ -9,7 +9,7 @@ import {
 	FormItem,
 	FormMessage,
 } from "@/components/ui/form";
-import { useForgotPasswordForm } from "../hooks/form/useForgotPasswordForm";
+import { useForgotPasswordForm } from "../index";
 
 export const ForgotPassword = () => {
 	const { form, onSubmit } = useForgotPasswordForm();
@@ -21,7 +21,7 @@ export const ForgotPassword = () => {
 				breadcrumbLinkName="Home"
 				breadcrumbPage="Forgot Password"
 			/>
-			<div className="container flex items-center justify-center gap-8 ">
+			<div className="container flex items-center justify-center gap-8 my-10 ">
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}

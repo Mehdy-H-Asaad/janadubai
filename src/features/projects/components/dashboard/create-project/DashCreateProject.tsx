@@ -26,10 +26,10 @@ import { ChangeEvent } from "react";
 import { MainButton } from "@/components/MainButton";
 import { useGetCategories } from "@/features/category";
 import { arrayBufferToBase64 } from "../../../../../utils/arrayBufferToBase64";
-import { useCreateProjectForm } from "@/features/projects/state/create-project.schema";
+import { useCreateProjectForm } from "../../../index";
 
 export const DashCreateProject = () => {
-	const { categories } = useGetCategories();
+	const { categories } = useGetCategories({ type: "projects" });
 
 	const {
 		createProjectForm,
@@ -40,6 +40,7 @@ export const DashCreateProject = () => {
 		removeImg,
 		description,
 		onCreateProject,
+		isCreatingProject,
 	} = useCreateProjectForm();
 
 	const handleImgChange = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -102,7 +103,6 @@ export const DashCreateProject = () => {
 												onValueChange={value => {
 													// Pass the selected category ID to field.onChange to update form state
 													field.onChange(value);
-													console.log(value);
 												}}
 											>
 												<SelectTrigger className="w-[180px] bg-transparent border-gray-700">
@@ -118,13 +118,14 @@ export const DashCreateProject = () => {
 													<SelectGroup>
 														<SelectLabel>Categories</SelectLabel>
 
-														{categories
-															?.filter(cat => cat.type === "projects")
-															.map(category => (
-																<SelectItem value={category.id.toString()}>
-																	{category.name}
-																</SelectItem>
-															))}
+														{categories?.map(category => (
+															<SelectItem
+																key={category.id}
+																value={category.id.toString()}
+															>
+																{category.name}
+															</SelectItem>
+														))}
 													</SelectGroup>
 												</SelectContent>
 											</Select>
@@ -136,6 +137,7 @@ export const DashCreateProject = () => {
 							<div className="flex flex-col gap-6 mb-10">
 								{description.map((_, index) => (
 									<FormField
+										key={index}
 										control={createProjectForm.control}
 										name={`description.${index}`}
 										render={({ field }) => (
@@ -211,7 +213,13 @@ export const DashCreateProject = () => {
 						</div>
 					</div>
 
-					<MainButton type="submit" title="create project" />
+					<MainButton
+						type="submit"
+						title={`${
+							isCreatingProject ? "Creating project" : "Create project"
+						}`}
+						disabled={isCreatingProject}
+					/>
 				</form>
 			</Form>
 		</div>

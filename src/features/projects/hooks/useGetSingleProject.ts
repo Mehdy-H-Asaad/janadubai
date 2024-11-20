@@ -1,5 +1,5 @@
 import { useCustomQuery } from "@/hooks/useCustomQuery";
-import { getSingleProjectService } from "../services/get-single-project.service";
+import { getSingleProjectService } from "../index";
 
 export const useGetSingleProject = (projectId: number) => {
 	const { data: singleProjectData, isLoading: isLoadingSingleProjectData } =

@@ -50,11 +50,14 @@ export const UpdateProductDialog = (product: TProductDTO) => {
 
 	useEffect(() => {
 		if (product) {
-			updateProductForm.reset(product);
+			updateProductForm.reset({
+				...product,
+				category_id: product.category_id.toString(),
+			});
 		}
 	}, []);
 
-	const { categories } = useGetCategories();
+	const { categories } = useGetCategories({ type: "products" });
 
 	const handleImgChange = async (e: ChangeEvent<HTMLInputElement>) => {
 		const { files } = e.target;
@@ -82,11 +85,11 @@ export const UpdateProductDialog = (product: TProductDTO) => {
 				</Button>
 			</DialogTrigger>
 
-			<DialogContent className="sm:max-w-[700px] bg-black border border-gray-700 text-white">
+			<DialogContent className="sm:max-w-[900px] h-[600px] bg-black border border-gray-700 text-white">
 				<DialogHeader>
 					<DialogTitle>Update Product</DialogTitle>
 					<DialogDescription>
-						Make changes to your project here. Click save when you're done.
+						Make changes to your product here. Click save when you're done.
 					</DialogDescription>
 				</DialogHeader>
 				<ScrollArea className="h-[400px]">
@@ -141,7 +144,7 @@ export const UpdateProductDialog = (product: TProductDTO) => {
 														<SelectGroup>
 															<SelectLabel>Categories</SelectLabel>
 															{categories
-																?.filter(cat => cat.type === "projects")
+																?.filter(cat => cat.type === "products")
 																.map(category => (
 																	<SelectItem
 																		key={category.id}

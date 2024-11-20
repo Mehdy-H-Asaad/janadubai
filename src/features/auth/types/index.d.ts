@@ -5,6 +5,9 @@ export type TLoginDTO = {
 
 export type TLoginResponseDTO = {
 	token: string;
+	username: string;
+	role: string;
+	created_at: Date;
 };
 
 export type TSignUpDTO = TLoginDTO;

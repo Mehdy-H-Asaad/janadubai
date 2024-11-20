@@ -1,11 +1,11 @@
 import { useFieldArray, useForm } from "react-hook-form";
-import { productSchema } from "./product.schema";
+import { productSchema } from "../index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useCreateProduct } from "../hooks/useCreateProduct";
+import { useCreateProduct } from "../index";
 
 export const useCreateProdcutForm = () => {
-	const { createProduct } = useCreateProduct();
+	const { createProduct, isCreatingProduct } = useCreateProduct();
 
 	const createProductSchema = productSchema;
 
@@ -57,5 +57,6 @@ export const useCreateProdcutForm = () => {
 		onCreateProduct,
 		removeDescription,
 		removeImg,
+		isCreatingProduct,
 	};
 };

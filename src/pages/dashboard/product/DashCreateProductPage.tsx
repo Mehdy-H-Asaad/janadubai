@@ -1,4 +1,4 @@
-import { DashCreateProduct } from "@/features/product/components/dashboard/create-product/DashCreateProduct";
+import { DashCreateProduct } from "@/features/product";
 
 export const DashCreateProductPage = () => {
 	return <DashCreateProduct />;

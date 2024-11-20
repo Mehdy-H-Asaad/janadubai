@@ -10,6 +10,6 @@ export const deleteProjectService = async (projectId: number) => {
 
 		return data;
 	} catch (error: any) {
-		throw new Error(error);
+		throw new Error(error.response.data.detail);
 	}
 };

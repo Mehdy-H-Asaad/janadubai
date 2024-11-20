@@ -2,12 +2,12 @@ import { useCustomMutation } from "@/hooks/useCustomMutation";
 import { logout } from "../index";
 
 export const useLogout = () => {
-	const { mutate: signOut } = useCustomMutation(
+	const { mutate: signOut, isPending: isPendingSignOut } = useCustomMutation(
 		logout,
-		["users"],
-		"",
+		["authUser"],
+		"/",
 		"Logged out successfully"
 	);
 
-	return { signOut };
+	return { signOut, isPendingSignOut };
 };

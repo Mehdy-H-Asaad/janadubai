@@ -2,9 +2,13 @@ import { useCustomMutation } from "@/hooks/useCustomMutation";
 import { createProductService } from "../index";
 
 export const useCreateProduct = () => {
-	const { mutate: createProduct } = useCustomMutation(createProductService, [
-		"products",
-	]);
+	const { mutate: createProduct, isPending: isCreatingProduct } =
+		useCustomMutation(
+			createProductService,
+			["products"],
+			"",
+			"Created product successfully"
+		);
 
-	return { createProduct };
+	return { createProduct, isCreatingProduct };
 };

@@ -1,11 +1,11 @@
 import { useFieldArray, useForm } from "react-hook-form";
-import { projectSchema } from "./project.schema";
+import { projectSchema } from "../index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useUpdateProjects } from "../hooks/useUpdateProject";
+import { useUpdateProjects } from "../index";
 
 export const useUpdateProjectForm = () => {
-	const { updateProject } = useUpdateProjects();
+	const { updateProject, isUpdatingProject } = useUpdateProjects();
 
 	const updateProjectSchema = projectSchema;
 
@@ -60,5 +60,6 @@ export const useUpdateProjectForm = () => {
 		updateProjectForm,
 		updateProjectSchema,
 		removeDescription,
+		isUpdatingProject,
 	};
 };

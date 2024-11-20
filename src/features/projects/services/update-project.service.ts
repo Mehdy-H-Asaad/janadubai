@@ -1,17 +1,15 @@
 import { axiosClient } from "@/api/axiosClient";
-import { TUpdateProjectDTO } from "../types";
+import { TProjectDTO, TUpdateProjectDTO } from "../types";
 
 export const updateProjectService = async (projectData: TUpdateProjectDTO) => {
 	try {
-		console.log(projectData);
-
-		const { data } = await axiosClient.put(
+		const { data }: { data: TProjectDTO } = await axiosClient.put(
 			`/projects/update-project/${projectData.id}`,
 			projectData
 		);
 
 		return data;
 	} catch (error: any) {
-		throw new Error(error);
+		throw new Error(error.response.data.detail);
 	}
 };

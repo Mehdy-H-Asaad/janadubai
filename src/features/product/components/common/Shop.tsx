@@ -11,7 +11,7 @@ import {
 import { useGetProducts } from "@/features/product/hooks/useGetProducts";
 import { useGetCategories } from "@/features/category";
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ProductCard } from "@/features/product";
 import { PaginationButtons } from "@/components/PaginationButtons";
 import { updateSearchParams } from "@/utils/updateSearchParams";
@@ -28,7 +28,7 @@ export const Shop = () => {
 		limit: 10,
 	});
 
-	const { categories } = useGetCategories();
+	const { categories } = useGetCategories({ type: "products" });
 
 	const handleParamCategoryClick = (selectedCategoryId: string) => {
 		const newCategoryId =
@@ -49,14 +49,6 @@ export const Shop = () => {
 		setPage(page => page - 1);
 	};
 
-	useEffect(() => {
-		setSearchParams("");
-	}, []);
-
-	// if (!categories) {
-	// 	return;
-	// }
-
 	return (
 		<div className="bg-primary-black py-10">
 			<PageBreadCrumb
@@ -76,7 +68,10 @@ export const Shop = () => {
 								<SelectGroup>
 									<SelectLabel>Categories</SelectLabel>
 									{categories?.map(category => (
-										<SelectItem value={category.id.toString()}>
+										<SelectItem
+											key={category.id}
+											value={category.id.toString()}
+										>
 											{category.name}
 										</SelectItem>
 									))}
@@ -87,19 +82,19 @@ export const Shop = () => {
 
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
 						{isLoadingProducts ? (
-							Array.from({ length: 4 }).map(_ => (
-								<div className="flex flex-col gap-7">
+							Array.from({ length: 4 }).map((_, index) => (
+								<div key={index} className="flex flex-col gap-7">
 									<Skeleton className="size-72" />
 									<Skeleton className="w-[200px] h-2 " />
 								</div>
 							))
-						) : !products ? (
-							<div className="text-xl font-bold text-golden">No Products</div>
-						) : products.length === 0 ? (
+						) : products && products.length === 0 ? (
 							<div className="text-xl font-bold text-golden">No Products</div>
 						) : (
+							products &&
 							products.map(product => (
 								<ProductCard
+									key={product.id}
 									id={product.id}
 									image={product.images}
 									title={product.name}

@@ -16,10 +16,10 @@ export const useCustomMutation = <T, K>(
 		onSuccess: () => {
 			if (toastMessage) toast.success(toastMessage);
 			queryClient.invalidateQueries({ queryKey: queryKey });
-			if (navigateTo) navigate(navigateTo);
+			if (navigateTo) navigate(navigateTo, { replace: true });
 		},
-		onError: error => {
-			throw new Error(error.message);
+		onError: (error: any) => {
+			toast.error(error.message || "Something went wrong.");
 		},
 	});
 };

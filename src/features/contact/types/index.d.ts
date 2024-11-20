@@ -2,10 +2,10 @@ import { InputHTMLAttributes } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
 export type TFormSchema = {
-	fullName: string;
+	name?: string;
 	email: string;
-	phone: string;
-	company: string;
+	phone?: string;
+	company?: string;
 	message: string;
 };
 

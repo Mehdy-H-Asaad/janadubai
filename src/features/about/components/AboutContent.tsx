@@ -43,7 +43,7 @@ export const AboutContent = () => {
 						</div>
 					</motion.div>
 				</div>
-				<div className="flex flex-col md:flex-row gap-28 items-center">
+				<div className="flex flex-col lg:flex-row gap-28 items-center">
 					<motion.div
 						initial={{ opacity: 0, x: -80 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ export const AboutContent = () => {
 					/>
 				</div>
 
-				<div className="flex flex-col md:flex-row gap-28 pt-40 pb-32 items-center">
+				<div className="flex flex-col lg:flex-row gap-28 pt-40 pb-32 items-center">
 					<motion.img
 						initial={{ opacity: 0, x: -80 }}
 						whileInView={{ opacity: 1, x: 0 }}

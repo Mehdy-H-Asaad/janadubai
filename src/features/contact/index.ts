@@ -7,3 +7,6 @@ export * from "./data/index";
 
 // HOOKS
 export * from "./hooks/useContactForm";
+
+// SCHEMA
+export * from "./schema/contact.schema";

@@ -1,10 +1,14 @@
 import { useCustomMutation } from "@/hooks/useCustomMutation";
-import { updateProjectService } from "../services/update-project.service";
+import { updateProjectService } from "../index";
 
 export const useUpdateProjects = () => {
-	const { mutate: updateProject } = useCustomMutation(updateProjectService, [
-		"projects",
-	]);
+	const { mutate: updateProject, isPending: isUpdatingProject } =
+		useCustomMutation(
+			updateProjectService,
+			["projects"],
+			"",
+			"Updated project successfully"
+		);
 
-	return { updateProject };
+	return { updateProject, isUpdatingProject };
 };

@@ -1,4 +1,6 @@
 import { FaFacebookF, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { IoListOutline, IoCreateOutline } from "react-icons/io5";
+import { LuUsers } from "react-icons/lu";
 
 export const navLinks = [
 	{
@@ -38,7 +40,7 @@ export const footerUsefulLinks = [
 	},
 	{
 		title: "Products",
-		path: "/prodcuts",
+		path: "/products",
 	},
 	{
 		title: "Projects",
@@ -92,5 +94,70 @@ export const footerEmails = [
 	},
 	{
 		email: "mailto:accounts@janadubai.com",
+	},
+];
+
+export const dashboardSideBarLinks = [
+	{
+		title: "Users",
+		links: [
+			{
+				path: "/dashboard/users/list-users",
+				actionName: "List Users",
+				icon: <LuUsers size={20} />,
+			},
+		],
+	},
+	{
+		title: "Products",
+
+		links: [
+			{
+				path: "/dashboard/products/list-products",
+				icon: <IoListOutline size={20} />,
+				actionName: "List products",
+			},
+			{
+				path: "/dashboard/products/create-product",
+				actionName: "Create product",
+				icon: <IoCreateOutline size={20} />,
+			},
+		],
+	},
+
+	{
+		title: "Projects",
+		links: [
+			{
+				path: "/dashboard/projects/list-projects",
+				icon: <IoListOutline size={20} />,
+				actionName: "List projects",
+			},
+			{
+				path: "/dashboard/projects/create-project",
+				actionName: "Create project",
+				icon: <IoCreateOutline size={20} />,
+			},
+		],
+	},
+	{
+		title: "Categories",
+		links: [
+			{
+				path: "/dashboard/categories/list-categories",
+				icon: <IoListOutline size={20} />,
+				actionName: "List categories",
+			},
+		],
+	},
+	{
+		title: "Questions",
+		links: [
+			{
+				path: "/dashboard/questions/list-questions",
+				icon: <IoListOutline size={20} />,
+				actionName: "List questions",
+			},
+		],
 	},
 ];

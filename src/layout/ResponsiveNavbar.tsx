@@ -21,7 +21,6 @@ const ResponsiveNavbar = () => {
 		if (!currentLink && location.pathname === "/login") {
 			setActiveTitle("");
 		}
-		console.log(currentLink);
 
 		if (currentLink) {
 			setActiveTitle(currentLink.title);
@@ -45,7 +44,7 @@ const ResponsiveNavbar = () => {
 					</SheetHeader>
 					<div className="grid gap-10 py-4">
 						{navLinks.map(nav => (
-							<SheetClose asChild>
+							<SheetClose key={nav.path} asChild>
 								<Link
 									to={nav.path}
 									key={nav.title}

@@ -26,11 +26,11 @@ import { ChangeEvent } from "react";
 import { MainButton } from "@/components/MainButton";
 import { useGetCategories } from "@/features/category";
 
-import { arrayBufferToBase64 } from "../../../../../utils/arrayBufferToBase64";
-import { useCreateProdcutForm } from "@/features/product/schema/create-product.schema";
+import { arrayBufferToBase64 } from "@/utils/arrayBufferToBase64";
+import { useCreateProdcutForm } from "../../../index";
 
 export const DashCreateProduct = () => {
-	const { categories } = useGetCategories();
+	const { categories } = useGetCategories({ type: "products" });
 
 	const {
 		createProductForm,
@@ -41,6 +41,7 @@ export const DashCreateProduct = () => {
 		images,
 		removeDescription,
 		removeImg,
+		isCreatingProduct,
 	} = useCreateProdcutForm();
 
 	const handleImgChange = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -119,13 +120,14 @@ export const DashCreateProduct = () => {
 													<SelectGroup>
 														<SelectLabel>Categories</SelectLabel>
 
-														{categories
-															?.filter(cat => cat.type === "products")
-															.map(category => (
-																<SelectItem value={category.id.toString()}>
-																	{category.name}
-																</SelectItem>
-															))}
+														{categories?.map(category => (
+															<SelectItem
+																key={category.id}
+																value={category.id.toString()}
+															>
+																{category.name}
+															</SelectItem>
+														))}
 													</SelectGroup>
 												</SelectContent>
 											</Select>
@@ -137,6 +139,7 @@ export const DashCreateProduct = () => {
 							<div className="flex flex-col gap-6 mb-10">
 								{description.map((_, index) => (
 									<FormField
+										key={index}
 										control={createProductForm.control}
 										name={`description.${index}`}
 										render={({ field }) => (
@@ -212,7 +215,12 @@ export const DashCreateProduct = () => {
 						</div>
 					</div>
 
-					<MainButton title="create product" />
+					<MainButton
+						disabled={isCreatingProduct}
+						title={`${
+							isCreatingProduct ? "Creating product..." : "Create product"
+						}`}
+					/>
 				</form>
 			</Form>
 		</div>

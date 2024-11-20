@@ -1,4 +1,4 @@
-import { ListCategories } from "@/features/category/components/data-table/ListCategories";
+import { ListCategories } from "@/features/category";
 
 export const ListCategoriesPage = () => {
 	return <ListCategories />;

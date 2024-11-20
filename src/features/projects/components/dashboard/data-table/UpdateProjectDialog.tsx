@@ -31,13 +31,13 @@ import {
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { useGetCategories } from "@/features/category";
-import { useUpdateProjectForm } from "@/features/projects/state/update-project.schema";
+import { useUpdateProjectForm } from "../../../index";
 import { arrayBufferToBase64 } from "@/utils/arrayBufferToBase64";
 import { ChangeEvent, useEffect } from "react";
-import { TProjectDTO } from "@/features/projects/types";
+import { TProjectDTO } from "../../../types";
 
 export const UpdateProjectDialog = (project: TProjectDTO) => {
-	const { categories } = useGetCategories();
+	const { categories } = useGetCategories({ type: "projects" });
 
 	const {
 		addNewDescription,
@@ -48,6 +48,7 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 		removeDescription,
 		removeImg,
 		updateProjectForm,
+		isUpdatingProject,
 	} = useUpdateProjectForm();
 
 	const handleImgChange = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,7 +71,10 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 
 	useEffect(() => {
 		if (updateProjectForm) {
-			updateProjectForm.reset(project);
+			updateProjectForm.reset({
+				...project,
+				category_id: project.category_id.toString(),
+			});
 		}
 	}, [updateProjectForm]);
 
@@ -82,7 +86,7 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 				</Button>
 			</DialogTrigger>
 
-			<DialogContent className="sm:max-w-[700px] bg-black border border-gray-700 text-white">
+			<DialogContent className="sm:max-w-[900px] h-[600px] bg-black border border-gray-700 text-white">
 				<DialogHeader>
 					<DialogTitle>Update Project</DialogTitle>
 					<DialogDescription>
@@ -125,18 +129,23 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 											<FormLabel>Category</FormLabel>
 											<FormControl>
 												<Select
-													value={field.value}
+													value={field.value.toString()}
 													onValueChange={value => {
 														// Pass the selected category ID to field.onChange to update form state
 														field.onChange(value);
+														console.log(value);
 													}}
 												>
 													<SelectTrigger className="w-[180px] bg-transparent border-gray-700">
 														<SelectValue
 															placeholder={
-																categories?.find(
-																	cat => cat.id.toString() === field.value
-																)?.name || "Select a category"
+																categories
+																	?.find(
+																		cat =>
+																			cat.id.toString() ===
+																			field.value.toString()
+																	)
+																	?.name.toString() || "Select a category"
 															}
 														/>
 													</SelectTrigger>
@@ -144,13 +153,14 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 														<SelectGroup>
 															<SelectLabel>Categories</SelectLabel>
 
-															{categories
-																?.filter(cat => cat.type === "projects")
-																.map(category => (
-																	<SelectItem value={category.id.toString()}>
-																		{category.name}
-																	</SelectItem>
-																))}
+															{categories?.map(category => (
+																<SelectItem
+																	key={category.id}
+																	value={category.id.toString()}
+																>
+																	{category.name}
+																</SelectItem>
+															))}
 														</SelectGroup>
 													</SelectContent>
 												</Select>
@@ -162,6 +172,7 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 								<div className="flex flex-col gap-6 mb-10">
 									{description.map((_, index) => (
 										<FormField
+											key={index}
 											control={updateProjectForm.control}
 											name={`description.${index}`}
 											render={({ field }) => (
@@ -234,7 +245,13 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 										))}
 									</div>
 								</div>
-								<MainButton type="submit" title="Update Project" />
+								<MainButton
+									type="submit"
+									title={`${
+										isUpdatingProject ? "Updating project" : "Update project"
+									}`}
+									disabled={isUpdatingProject}
+								/>
 							</form>
 						</Form>
 					</div>

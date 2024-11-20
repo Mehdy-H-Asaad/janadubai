@@ -1,5 +1,5 @@
 import { axiosClient } from "@/api/axiosClient";
-import { TUserDTO } from "../index";
+import { TUserDTO } from "../types";
 
 export const getUsersService = async () => {
 	try {
@@ -9,6 +9,6 @@ export const getUsersService = async () => {
 
 		return data;
 	} catch (error: any) {
-		throw new Error(error.message);
+		throw new Error(error.response.data.detail);
 	}
 };

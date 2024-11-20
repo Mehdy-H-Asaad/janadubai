@@ -1,4 +1,3 @@
-// import { CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 type TProductCard = {
 	title: string;

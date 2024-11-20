@@ -6,10 +6,8 @@ export const deleteProductService = async (productId: string) => {
 			`/products/delete-product/${productId}`
 		);
 
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
-		throw new Error(error);
+		throw new Error(error.response.data.detail);
 	}
 };

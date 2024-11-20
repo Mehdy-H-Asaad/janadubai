@@ -1,6 +1,6 @@
 import MainTitle from "@/components/MainTitle";
 import { motion } from "framer-motion";
-import { OUR_CLIENTS } from "..";
+import { OUR_CLIENTS } from "../index";
 export const OurClientsContent = () => {
 	const staggerVariants = {
 		initial: {

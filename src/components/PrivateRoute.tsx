@@ -1,18 +1,18 @@
+import { useAuthStore } from "@/features/auth/state/auth.state";
 import { Navigate } from "react-router-dom";
 
 type TPrivateRouteProps = {
-	isAdmin: boolean;
 	children?: React.ReactNode;
 };
 
-const PrivateRoute = ({ isAdmin, children }: TPrivateRouteProps) => {
-	const adminStatus = isAdmin ?? localStorage.getItem("userRole") === "admin";
+const PrivateRoute = ({ children }: TPrivateRouteProps) => {
+	const { authUser, isAdmin } = useAuthStore();
 
-	if (!adminStatus) {
-		return <Navigate to="/login" replace />;
-	}
-
-	return <>{children}</>;
+	return (!authUser && !isAdmin) || !isAdmin ? (
+		<Navigate to="/login" replace />
+	) : (
+		children
+	);
 };
 
 export default PrivateRoute;

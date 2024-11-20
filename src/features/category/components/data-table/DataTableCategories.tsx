@@ -24,7 +24,7 @@ import {
 import { useState } from "react";
 import { MainButton } from "@/components/MainButton";
 
-import { DialogHeader, DialogFooter } from "@/components/ui/dialog";
+import { DialogHeader } from "@/components/ui/dialog";
 import {
 	Dialog,
 	DialogTrigger,
@@ -50,7 +50,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { useCreateCategorySchema } from "../../schema/create-category.schema";
+import { useCreateCategorySchema } from "../../index";
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[];
@@ -103,9 +103,9 @@ export function DataTableCategories<TData, TValue>({
 				/>
 				<Dialog>
 					<DialogTrigger asChild>
-						<button>
-							<MainButton type="button" title="Create category" />
-						</button>
+						{/* <Button> */}
+						<MainButton type="button" title="Create category" />
+						{/* </Button> */}
 					</DialogTrigger>
 					<DialogContent className="sm:max-w-[425px] bg-black text-white">
 						<DialogHeader>
@@ -163,9 +163,11 @@ export function DataTableCategories<TData, TValue>({
 									)}
 								/>
 
-								<DialogFooter>
-									<MainButton type="submit" title="Save changes" />
-								</DialogFooter>
+								{/* <DialogFooter> */}
+								{/* <Button> */}
+								<MainButton type="submit" title="Save changes" />
+								{/* </Button> */}
+								{/* </DialogFooter> */}
 							</form>
 						</Form>
 					</DialogContent>

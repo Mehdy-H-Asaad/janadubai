@@ -3,14 +3,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { useForgotPassword } from "../../index";
+import { forgotPasswordSchema } from "../../index";
 
 export const useForgotPasswordForm = () => {
-	const forgotPasswordSchema = z.object({
-		email: z.string().min(1, "Email is required").email({
-			message: "Invalid Email",
-		}),
-	});
-
 	const form = useForm<z.infer<typeof forgotPasswordSchema>>({
 		resolver: zodResolver(forgotPasswordSchema),
 		defaultValues: {

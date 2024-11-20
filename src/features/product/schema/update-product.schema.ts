@@ -1,8 +1,8 @@
 import { useFieldArray, useForm } from "react-hook-form";
-import { productSchema } from "./product.schema";
+import { productSchema } from "../index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useUpdateProduct } from "../hooks/useUpdateProduct";
+import { useUpdateProduct } from "../index";
 
 export const useUpdateProductForm = () => {
 	const { updateProduct } = useUpdateProduct();

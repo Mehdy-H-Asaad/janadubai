@@ -11,8 +11,8 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { TProjectDTO } from "@/features/projects/types";
-import { useDeleteProject } from "@/features/projects/hooks/useDeleteProject";
-import { UpdateProjectDialog } from "./UpdateProjectDialog";
+import { useDeleteProject } from "../../../index";
+import { UpdateProjectDialog } from "../../../index";
 
 export const ColumnsProject: ColumnDef<TProjectDTO>[] = [
 	{

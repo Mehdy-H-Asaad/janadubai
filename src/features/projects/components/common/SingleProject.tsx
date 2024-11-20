@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetSingleProject } from "../../hooks/useGetSingleProject";
+import { useGetSingleProject } from "../../index";
 import { useEffect, useState } from "react";
 import {
 	Carousel,
@@ -15,7 +15,6 @@ import {
 	BreadcrumbSeparator,
 	BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-import { Slash } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const SingleProject = () => {
@@ -110,17 +109,13 @@ export const SingleProject = () => {
 										Home
 									</Link>
 								</BreadcrumbItem>
-								<BreadcrumbSeparator className="text-white">
-									<Slash />
-								</BreadcrumbSeparator>
+								<BreadcrumbSeparator className="text-white"></BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<Link to={"/shop"} className="text-white">
 										Projects
 									</Link>
 								</BreadcrumbItem>
-								<BreadcrumbSeparator className="text-white">
-									<Slash />
-								</BreadcrumbSeparator>
+								<BreadcrumbSeparator className="text-white"></BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<BreadcrumbPage className="text-white">
 										{singleProjectData.name}

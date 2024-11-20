@@ -1,4 +1,4 @@
-import { ListProducts } from "@/features/product/components/dashboard/data-table/ListProducts";
+import { ListProducts } from "@/features/product";
 
 export const DashboardListProductsPage = () => {
 	return <ListProducts />;

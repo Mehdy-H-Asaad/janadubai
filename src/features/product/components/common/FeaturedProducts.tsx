@@ -6,8 +6,8 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ProductCard } from "./ProductCard";
-import { useGetProducts } from "../../hooks/useGetProducts";
+import { ProductCard } from "../../index";
+import { useGetProducts } from "../../index";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const FeaturedProducts = () => {
@@ -24,20 +24,22 @@ export const FeaturedProducts = () => {
 					<CarouselContent className="px-8">
 						{isLoadingProducts ? (
 							<div className="flex gap-5">
-								{Array.from({ length: 6 }).map(_ => (
-									<div className="flex flex-col gap-7">
+								{Array.from({ length: 6 }).map((_, index) => (
+									<div key={index} className="flex flex-col gap-7">
 										<Skeleton className="size-72" />
 										<Skeleton className="w-[200px] h-2 " />
 									</div>
 								))}
 							</div>
-						) : !products ? (
-							<div className="text-xl font-bold text-golden">No Products</div>
-						) : products.length === 0 ? (
+						) : products && products.length === 0 ? (
 							<div className="text-xl font-bold text-golden">No Products</div>
 						) : (
+							products &&
 							products.map(product => (
-								<CarouselItem className="lg:basis-1/4 md:basis-1/3 sm:basis-1/2 cursor-pointer">
+								<CarouselItem
+									key={product.id}
+									className="lg:basis-1/4 md:basis-1/3 sm:basis-1/2 cursor-pointer"
+								>
 									<ProductCard
 										id={product.id}
 										image={product.images}

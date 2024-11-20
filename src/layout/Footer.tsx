@@ -34,7 +34,11 @@ const Footer = () => {
 							</div>
 							<div className="flex flex-col gap-2">
 								{footerEmails.map(ele => (
-									<a href={`mailto:${ele.email}`} className="text-primary-grey">
+									<a
+										key={ele.email}
+										href={`mailto:${ele.email}`}
+										className="text-primary-grey"
+									>
 										{ele.email}
 									</a>
 								))}
@@ -90,7 +94,7 @@ const Footer = () => {
 					<div className="flex gap-4">
 						{footerSocials.map(ele => {
 							return (
-								<a key={ele.path} href={ele.path}>
+								<a target="_blank" key={ele.path} href={ele.path}>
 									<span>{ele.title}</span>
 								</a>
 							);

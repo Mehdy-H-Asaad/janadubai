@@ -1,5 +1,5 @@
 import MainTitle from "@/components/MainTitle";
-import { STATISTICS } from "../data";
+import { STATISTICS } from "../index";
 import { motion } from "framer-motion";
 
 export const Statics = () => {

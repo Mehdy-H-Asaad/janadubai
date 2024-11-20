@@ -1,4 +1,4 @@
-import { ListProjects } from "@/features/projects/components/dashboard/data-table/ListProjects";
+import { ListProjects } from "@/features/projects";
 
 export const DashListProjectsPage = () => {
 	return <ListProjects />;

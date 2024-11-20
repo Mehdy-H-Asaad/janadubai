@@ -13,7 +13,7 @@ import {
 import { useDeleteProduct } from "@/features/product/hooks/useDeleteProduct";
 import { TProductDTO } from "@/features/product/types";
 
-import { UpdateProductDialog } from "./UpdateProductDialog";
+import { UpdateProductDialog } from "../../../index";
 
 export const ColumnsProduct: ColumnDef<TProductDTO>[] = [
 	{

@@ -1,5 +1,5 @@
 import MainTitle from "@/components/MainTitle";
-import { HOW_WE_WORK_DATA } from "../data";
+import { HOW_WE_WORK_DATA } from "../index";
 import { motion } from "framer-motion";
 
 export const HowWeWork = () => {
@@ -31,7 +31,10 @@ export const HowWeWork = () => {
 				>
 					{HOW_WE_WORK_DATA.map(item => {
 						return (
-							<div className="text-white border-[3px] border-[#ffffff26] relative p-5">
+							<div
+								key={item.id}
+								className="text-white border-[3px] border-[#ffffff26] relative p-5"
+							>
 								<h5 className="absolute text-golden -top-5 font-bold text-4xl left-1/2 -translate-x-1/2">
 									0{item.id}.
 								</h5>

@@ -1,4 +1,4 @@
-import { Projects } from "@/features/projects/components/common/Projects";
+import { Projects } from "@/features/projects";
 
 export const ProjectsPage = () => {
 	return <Projects />;

@@ -1,13 +1,22 @@
 import { z } from "zod";
-import { useSignup } from "../../index";
-import { useSignUpSchema } from "../../index";
+import { signupFormSchema, useSignup } from "../../index";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 export const useSignUpForm = () => {
-	const { signUp } = useSignup();
-	const { form, signupFormSchema } = useSignUpSchema();
+	const { signUp, isSigning } = useSignup();
+
+	const signupForm = useForm<z.infer<typeof signupFormSchema>>({
+		resolver: zodResolver(signupFormSchema),
+		defaultValues: {
+			username: "",
+			password: "",
+		},
+	});
+
 	const onSubmit = async (values: z.infer<typeof signupFormSchema>) => {
 		signUp(values);
 	};
 
-	return { form, onSubmit };
+	return { signupForm, onSubmit, isSigning };
 };

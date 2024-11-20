@@ -16,7 +16,10 @@ export const ContactContent = () => {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
 					{contactDetails.map(item => (
-						<div className="border-2 border-secondary-grey p-8">
+						<div
+							key={item.title}
+							className="border-2 border-secondary-grey p-8"
+						>
 							<a href={`${item.href}`}>
 								<span className="font-bold mb-4 block text-xl">
 									{item.title}
@@ -34,9 +37,9 @@ export const ContactContent = () => {
 					<div className="flex gap-6">
 						<ContactForm
 							label="Fullname"
-							name="fullName"
+							name="name"
 							register={register}
-							error={errors.fullName}
+							error={errors.name}
 						/>
 
 						<ContactForm

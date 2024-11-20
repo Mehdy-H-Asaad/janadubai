@@ -1,19 +1,11 @@
 import { useCustomQuery } from "@/hooks/useCustomQuery";
-import { getAuthUserService } from "../services/get-auth-user.service";
+import { getAuthUserService } from "../index";
 
 export const useGetAuthUser = () => {
-	const storedUserRole = localStorage.getItem("userRole");
-	const isAdmin = storedUserRole === "admin";
-	const { data: authUser } = useCustomQuery(["authUser"], getAuthUserService, {
-		queryKey: ["authUser"],
-		enabled: !isAdmin,
-	});
+	const { data: currentAuthUser } = useCustomQuery(
+		["authUser"],
+		getAuthUserService
+	);
 
-	// const isAdmin = authUser?.role.toLowerCase() === "admin";
-
-	if (authUser?.role && authUser.role.toLowerCase() !== storedUserRole) {
-		localStorage.setItem("userRole", authUser.role.toLowerCase());
-	}
-
-	return { authUser, isAdmin };
+	return { currentAuthUser };
 };

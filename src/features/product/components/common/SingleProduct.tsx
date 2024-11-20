@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetSingleProduct } from "../../hooks/useGetSingleProduct";
+import { useGetSingleProduct } from "../../index";
 import { useEffect, useState } from "react";
 import {
 	Carousel,
@@ -15,7 +15,6 @@ import {
 	BreadcrumbSeparator,
 	BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-import { Slash } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const SingleProduct = () => {
@@ -58,7 +57,12 @@ export const SingleProduct = () => {
 		);
 	}
 
-	if (!singleProductData) return <div>Not found</div>;
+	if (!singleProductData)
+		return (
+			<div className="text-center p-10 justify-between bg-primary-black text-golden text-xl font-bold">
+				Product Not found
+			</div>
+		);
 
 	return (
 		<div className="py-20 bg-primary-black text-white">
@@ -107,17 +111,13 @@ export const SingleProduct = () => {
 										Home
 									</Link>
 								</BreadcrumbItem>
-								<BreadcrumbSeparator className="text-white">
-									<Slash />
-								</BreadcrumbSeparator>
+								<BreadcrumbSeparator className="text-white"></BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<Link to={"/shop"} className="text-white">
 										Products
 									</Link>
 								</BreadcrumbItem>
-								<BreadcrumbSeparator className="text-white">
-									<Slash />
-								</BreadcrumbSeparator>
+								<BreadcrumbSeparator className="text-white"></BreadcrumbSeparator>
 								<BreadcrumbItem>
 									<BreadcrumbPage className="text-white">
 										{singleProductData.name}

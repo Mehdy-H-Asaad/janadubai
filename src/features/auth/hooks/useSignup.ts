@@ -2,12 +2,12 @@ import { useCustomMutation } from "@/hooks/useCustomMutation";
 import { signup } from "../index";
 
 export const useSignup = () => {
-	const { mutate: signUp } = useCustomMutation(
+	const { mutate: signUp, isPending: isSigning } = useCustomMutation(
 		signup,
 		["users"],
 		"/",
 		"Welcome!"
 	);
 
-	return { signUp };
+	return { signUp, isSigning };
 };

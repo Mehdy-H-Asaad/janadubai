@@ -4,7 +4,7 @@ import { HowWeWork } from "@/features/home";
 import { OurAdvantages } from "@/features/home";
 import { Statics } from "@/features/home";
 import { ContactUs } from "@/features/home";
-import { FeaturedProjects } from "@/features/projects/components/common/FeaturedProjects";
+import { FeaturedProjects } from "@/features/projects";
 
 const Homepage = () => {
 	return (

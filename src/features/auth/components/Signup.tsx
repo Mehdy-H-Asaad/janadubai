@@ -12,20 +12,20 @@ import { motion } from "framer-motion";
 import { useSignUpForm } from "../index";
 
 export const Signup = () => {
-	const { form, onSubmit } = useSignUpForm();
+	const { signupForm, onSubmit, isSigning } = useSignUpForm();
 	return (
 		<div className="min-h-[304px] ">
-			<Form {...form}>
+			<Form {...signupForm}>
 				<motion.form
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}
-					onSubmit={form.handleSubmit(onSubmit)}
+					onSubmit={signupForm.handleSubmit(onSubmit)}
 					className="space-y-8 flex flex-col w-full sm:w-fit"
 				>
 					{/* Email Field */}
 					<FormField
-						control={form.control}
+						control={signupForm.control}
 						name="username"
 						render={({ field }) => (
 							<FormItem className="w-full sm:w-96">
@@ -46,7 +46,7 @@ export const Signup = () => {
 
 					{/* Password Field */}
 					<FormField
-						control={form.control}
+						control={signupForm.control}
 						name="password"
 						render={({ field }) => (
 							<FormItem className="w-full sm:w-96">
@@ -65,10 +65,11 @@ export const Signup = () => {
 					/>
 
 					<Button
+						disabled={isSigning}
 						className="capitalize bg-golden hover:bg-golden w-full"
 						type="submit"
 					>
-						Signup
+						{isSigning ? "Registering..." : "Signup"}
 					</Button>
 				</motion.form>
 			</Form>

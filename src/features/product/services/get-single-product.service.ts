@@ -7,10 +7,8 @@ export const getSingleProductService = async (id: number) => {
 			`/products/get-products/${id}`
 		);
 
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
-		throw new Error(error);
+		throw new Error(error.response.data.detail);
 	}
 };

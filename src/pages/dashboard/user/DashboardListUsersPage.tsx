@@ -1,4 +1,4 @@
-import { ListUsers } from "@/features/user/components/data-table/ListUsers";
+import { ListUsers } from "@/features/user";
 
 export const DashboardListUsersPage = () => {
 	return <ListUsers />;

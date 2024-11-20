@@ -28,12 +28,8 @@ export const getProductsService = async ({
 			`/products/get-products/?${queryParameters.toString()}`
 		);
 
-		console.log(queryParameters.toString());
-
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
-		throw new Error(error);
+		throw new Error(error.response.data.detail);
 	}
 };

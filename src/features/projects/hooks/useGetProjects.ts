@@ -1,6 +1,6 @@
 import { useCustomQuery } from "@/hooks/useCustomQuery";
 import { useSearchParams } from "react-router-dom";
-import { getProjectsService } from "../services/get-projects.service";
+import { getProjectsService } from "../index";
 
 type TUseGetProjects = {
 	limit?: number;
