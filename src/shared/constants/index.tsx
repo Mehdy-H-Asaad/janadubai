@@ -54,7 +54,7 @@ export const footerUsefulInfo = [
 		path: "/about",
 	},
 	{
-		title: "Contact usd",
+		title: "Contact us",
 		path: "/contact",
 	},
 	{
