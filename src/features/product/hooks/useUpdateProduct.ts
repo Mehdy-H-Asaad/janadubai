@@ -5,7 +5,6 @@ export const useUpdateProduct = () => {
 	const { mutate: updateProduct } = useCustomMutation(
 		updateProductService,
 		["products"],
-		"",
 		"Updated product successfully"
 	);
 

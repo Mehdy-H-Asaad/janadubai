@@ -23,7 +23,7 @@ export const Login = () => {
 	const { loginForm, onSubmit, isLoginPending } = useLoginForm();
 
 	return (
-		<div className="bg-[#1a1a1a] py-20">
+		<div className="bg-[#1a1a1a] py-10">
 			<PageBreadCrumb
 				breadcrumbLink="/"
 				breadcrumbPage="My account"

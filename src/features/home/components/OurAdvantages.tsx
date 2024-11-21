@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export const OurAdvantages = () => {
 	return (
-		<section className="py-20 bg-black">
+		<section className="py-20 bg-black overflow-x-hidden">
 			<div className="container">
-				<div className="flex items-center gap-14 flex-col lg:flex-row lg:gap-9">
+				<div className="flex items-center gap-14 flex-col lg:flex-row lg:gap-9 ">
 					<motion.div
 						initial={{ opacity: 0, x: -60 }}
 						whileInView={{ opacity: 1, x: 0 }}

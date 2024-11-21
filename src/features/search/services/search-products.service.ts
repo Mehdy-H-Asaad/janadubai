@@ -17,8 +17,6 @@ export const searchProductsService = async ({
 			`/products/search-products/${params}`
 		);
 
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
 		throw new Error(error.response.data.detail);

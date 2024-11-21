@@ -6,7 +6,7 @@ export const useCreateProduct = () => {
 		useCustomMutation(
 			createProductService,
 			["products"],
-			"",
+
 			"Created product successfully"
 		);
 

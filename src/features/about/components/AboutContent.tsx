@@ -5,7 +5,7 @@ import secondAboutImg from "../assets/imgs/stadiums-multi-purpose-8-600x350.jpg.
 import MainTitle from "@/components/MainTitle";
 export const AboutContent = () => {
 	return (
-		<section className="bg-black">
+		<section className="bg-black overflow-x-hidden">
 			<div className="container ">
 				<div className="flex items-center h-[calc(100vh-96px)] relative">
 					<motion.div

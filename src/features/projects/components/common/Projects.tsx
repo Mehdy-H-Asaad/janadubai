@@ -55,7 +55,7 @@ export const Projects = () => {
 			<div className="container">
 				<div className="flex items-center gap-10 justify-center text-white">
 					{
-						<div className="flex items-center gap-10 justify-center text-white mt-10">
+						<div className="flex flex-col sm:flex-row items-center gap-10 justify-center text-white mt-10">
 							{isLoadingCategories ? (
 								<div className="grid grid-cols-1 sm:grid-cols-4  gap-5 text-black">
 									{Array.from({ length: 4 }).map((_, index) => (
@@ -77,7 +77,7 @@ export const Projects = () => {
 											<div
 												key={cat.id}
 												onClick={() => handleCategoryClick(cat.id.toString())}
-												className={`text-[#ffffffb3] capitalize font-[600] cursor-pointer duration-300 hover:text-white relative before:w-0 before:duration-300 before:h-[2px] before:bg-golden before:hover:w-full before:absolute before:bottom-0 before:left-0 before:content-[''] ${
+												className={` text-[#ffffffb3] capitalize font-[600] cursor-pointer duration-300 hover:text-white relative before:w-0 before:duration-300 before:h-[2px] before:bg-golden before:hover:w-full before:absolute before:bottom-0 before:left-0 before:content-[''] ${
 													activeCategory === cat.id.toString()
 														? "text-white before:w-full"
 														: ""

@@ -6,7 +6,7 @@ export const useCreateProjects = () => {
 		useCustomMutation(
 			createProjectService,
 			["projects"],
-			"",
+
 			"Created project successfully"
 		);
 

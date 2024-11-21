@@ -5,7 +5,7 @@ export const useDeleteCategory = () => {
 	const { mutate: deleteCategory } = useCustomMutation(
 		deleteCategoryService,
 		["categories"],
-		"",
+
 		"Deleted category successfully"
 	);
 

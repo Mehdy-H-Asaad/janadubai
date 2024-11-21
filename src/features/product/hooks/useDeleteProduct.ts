@@ -5,7 +5,7 @@ export const useDeleteProduct = () => {
 	const { mutate: deleteProduct } = useCustomMutation(
 		deleteProductService,
 		["products"],
-		"",
+
 		"Deleted product successfully"
 	);
 

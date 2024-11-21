@@ -6,8 +6,8 @@ export const useCreateQuestion = () => {
 		useCustomMutation(
 			createQuestionService,
 			["questions"],
-			"",
-			"Created successfully"
+
+			"Your question has been sent successfully"
 		);
 
 	return { createQuestion, isCreatingQuestion };

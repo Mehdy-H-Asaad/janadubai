@@ -64,8 +64,11 @@ export const SearchFeature = () => {
 						<div className=" text-white flex bg-primary-black items-center flex-wrap rounded-md">
 							{searchInputValue ? (
 								isLoadingfilteredProducts ? (
-									Array.from({ length: 6 }).map(_ => (
-										<div className="flex items-center gap-2 basis-full p-4">
+									Array.from({ length: 6 }).map((_, index) => (
+										<div
+											key={index}
+											className="flex items-center gap-2 basis-full p-4"
+										>
 											<Skeleton className="size-20" />
 											<div className="flex flex-col gap-4">
 												<Skeleton className="w-52 h-2" />
@@ -81,6 +84,7 @@ export const SearchFeature = () => {
 									filteredProducts &&
 									filteredProducts.map(filteredProduct => (
 										<Link
+											key={filteredProduct.id}
 											to={`/products/${filteredProduct.id}`}
 											className="flex items-center gap-2 basis-full p-4 border border-gray-700"
 										>

@@ -4,8 +4,11 @@ export type TLoginDTO = {
 };
 
 export type TLoginResponseDTO = {
+	id: number;
 	token: string;
+	token_type: string;
 	username: string;
+	phone: string;
 	role: string;
 	created_at: Date;
 };

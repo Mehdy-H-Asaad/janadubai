@@ -83,7 +83,7 @@ export const ContactContent = () => {
 						)}
 					</div>
 					<button className="bg-white text-black py-1 px-5 w-fit font-bold rounded-md">
-						SUBMIT
+						Ask a question
 					</button>
 				</form>
 			</div>

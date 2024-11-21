@@ -5,7 +5,6 @@ export const useCreateCategory = () => {
 	const { mutate: createCategory } = useCustomMutation(
 		createCategoryService,
 		["categories"],
-		"",
 		"Created category successfully"
 	);
 
