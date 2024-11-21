@@ -93,7 +93,7 @@ export const footerEmails = [
 		email: "sales@janadubai.com",
 	},
 	{
-		email: "mailto:accounts@janadubai.com",
+		email: "accounts@janadubai.com",
 	},
 ];
 
