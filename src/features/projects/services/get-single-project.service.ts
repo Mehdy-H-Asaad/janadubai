@@ -7,8 +7,6 @@ export const getSingleProjectService = async (id: number) => {
 			`/projects/get-projects/${id}`
 		);
 
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
 		throw new Error(error.response.data.detail);

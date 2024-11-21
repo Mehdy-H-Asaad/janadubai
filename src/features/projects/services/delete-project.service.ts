@@ -6,8 +6,6 @@ export const deleteProjectService = async (projectId: number) => {
 			`/projects/delete-project/${projectId}`
 		);
 
-		console.log(data);
-
 		return data;
 	} catch (error: any) {
 		throw new Error(error.response.data.detail);
