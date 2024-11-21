@@ -23,7 +23,7 @@ const Navbar = () => {
 	}, [location.pathname]);
 
 	return (
-		<nav className="bg-primary-black h-24 flex items-center">
+		<nav className="bg-primary-black h-24 flex items-center border-b border-b-[#ffffff26]">
 			<div className="container flex items-center justify-between">
 				<img src={Logo} className="w-36 sm:w-52 object-contain" alt="Logo" />
 

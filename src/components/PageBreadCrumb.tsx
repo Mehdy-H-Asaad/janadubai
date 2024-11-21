@@ -19,11 +19,11 @@ export const PageBreadCrumb = ({
 	breadcrumbLinkName,
 }: TPageBreadCrumb) => {
 	return (
-		<Breadcrumb className="flex items-center justify-center text-center py-20 bg-black ">
+		<Breadcrumb className="flex items-center justify-center text-center py-10 bg-black ">
 			<BreadcrumbList>
 				<BreadcrumbItem>
 					<Link
-						className="text-white hover:text-white font-[600] text-xl md:text-5xl"
+						className="text-white hover:text-white font-[600] text-xl md:text-2xl"
 						to={breadcrumbLink}
 					>
 						{breadcrumbLinkName}
@@ -31,7 +31,7 @@ export const PageBreadCrumb = ({
 				</BreadcrumbItem>
 				<BreadcrumbSeparator className="text-white" />
 				<BreadcrumbItem>
-					<BreadcrumbPage className="text-white font-[600] text-xl md:text-5xl">
+					<BreadcrumbPage className="text-white font-[600] text-xl md:text-2xl">
 						{breadcrumbPage}
 					</BreadcrumbPage>
 				</BreadcrumbItem>

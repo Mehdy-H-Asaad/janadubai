@@ -50,19 +50,24 @@ export const Shop = () => {
 	};
 
 	return (
-		<div className="bg-primary-black py-10">
+		<div className="bg-primary-black pb-10">
 			<PageBreadCrumb
 				breadcrumbLinkName="Home"
 				breadcrumbLink="/"
 				breadcrumbPage="Shop"
 			/>
 			<div className="container">
-				<div className="my-10">
+				<div className="mt-10">
 					<div className="flex items-center justify-between gap-8 flex-col sm:flex-row ">
 						<p className="text-white">Showing 1-10 results</p> {/*of 33*/}
 						<Select onValueChange={handleParamCategoryClick}>
 							<SelectTrigger className="w-[180px] bg-transparent text-white ml-0 sm:ml-auto">
-								<SelectValue placeholder="Select category" />
+								<SelectValue
+									placeholder={
+										categories?.find(cat => cat.id.toString() === categoryId)
+											?.name || "Select category"
+									}
+								/>
 							</SelectTrigger>
 							<SelectContent>
 								<SelectGroup>

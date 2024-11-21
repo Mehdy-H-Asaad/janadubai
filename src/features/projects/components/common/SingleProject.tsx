@@ -65,8 +65,8 @@ export const SingleProject = () => {
 		);
 
 	return (
-		<div className="py-10 bg-primary-black text-white">
-			<div className="text-3xl sm:text-5xl font-medium text-center px-2 py-20 bg-black">
+		<div className="pb-10 bg-primary-black text-white">
+			<div className="text-2xl font-medium text-center px-2 py-10 bg-black">
 				{singleProjectData.name}
 			</div>
 			<div className="container">

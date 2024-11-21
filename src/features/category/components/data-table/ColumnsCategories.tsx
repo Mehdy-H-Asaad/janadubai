@@ -21,7 +21,7 @@ type TColumnsCategories = {
 export const ColumnsCategories: ColumnDef<TColumnsCategories>[] = [
 	{
 		accessorKey: "name",
-		header: "Category name",
+		header: "Category",
 	},
 	{ accessorKey: "type", header: "Category type" },
 

@@ -37,7 +37,7 @@ export const ColumnsProduct: ColumnDef<TProductDTO>[] = [
 	},
 	{
 		accessorKey: "category_name",
-		header: "Category name",
+		header: "Category",
 	},
 
 	{

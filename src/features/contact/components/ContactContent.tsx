@@ -1,14 +1,20 @@
 import MainTitle from "@/components/MainTitle";
 import { Label } from "@/components/ui/label";
 import { contactDetails, ContactForm, useContactForm } from "../index";
+import { PageBreadCrumb } from "@/components/PageBreadCrumb";
 
 export const ContactContent = () => {
 	const { errors, handlePhoneInput, handleSubmit, onSumbit, register } =
 		useContactForm();
 
 	return (
-		<section className="bg-primary-black text-white py-20">
-			<div className="container">
+		<section className="bg-primary-black text-white pb-20">
+			<PageBreadCrumb
+				breadcrumbLinkName="Home"
+				breadcrumbLink="/"
+				breadcrumbPage="Contact us"
+			/>
+			<div className="container mt-20">
 				<MainTitle
 					heading="LET'S GET IN TOUCH"
 					subHeading="Our custom exhibition stands are designed to suit all your specifications and requirements."

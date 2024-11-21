@@ -1,6 +1,7 @@
 import MainTitle from "@/components/MainTitle";
 import { motion } from "framer-motion";
 import { OUR_CLIENTS } from "../index";
+import { PageBreadCrumb } from "@/components/PageBreadCrumb";
 export const OurClientsContent = () => {
 	const staggerVariants = {
 		initial: {
@@ -17,13 +18,19 @@ export const OurClientsContent = () => {
 	};
 
 	return (
-		<section className="bg-primary-black py-32">
-			<div className="container">
+		<section className="bg-primary-black pb-32">
+			<PageBreadCrumb
+				breadcrumbLinkName="Home"
+				breadcrumbLink="/"
+				breadcrumbPage="Our clients"
+			/>
+			<div className="container mt-20">
 				<MainTitle
 					heading="OUR CLIENTS"
 					subHeading="From small businesses to the government"
 				/>
-				<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+
+				<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 ">
 					{OUR_CLIENTS.map(item => {
 						return (
 							<motion.div

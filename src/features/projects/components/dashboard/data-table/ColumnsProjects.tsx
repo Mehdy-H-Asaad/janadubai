@@ -36,7 +36,7 @@ export const ColumnsProject: ColumnDef<TProjectDTO>[] = [
 	},
 	{
 		accessorKey: "category_name",
-		header: "Category name",
+		header: "Category",
 	},
 
 	{

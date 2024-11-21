@@ -46,14 +46,14 @@ export const Projects = () => {
 	};
 
 	return (
-		<div className="bg-primary-black py-10">
+		<div className="bg-primary-black pb-10">
 			<PageBreadCrumb
 				breadcrumbLink="/"
 				breadcrumbLinkName="Home"
 				breadcrumbPage="Projects"
 			/>
 			<div className="container">
-				<div className="flex items-center gap-10 justify-center text-white">
+				<div className="flex items-center gap-10 justify-center text-white mt-10">
 					{
 						<div className="flex flex-col sm:flex-row items-center gap-10 justify-center text-white mt-10">
 							{isLoadingCategories ? (
