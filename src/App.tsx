@@ -5,7 +5,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import { DashboardRoutes } from "./routes/DashboardRoutes";
-
+import suspenseImg from "../public/imgs/Logo2.png.webp";
 // Lazy loading of page components
 const Home = lazy(() => import("./pages/Homepage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -29,7 +29,7 @@ function App() {
 			<Suspense
 				fallback={
 					<div className="bg-black fixed h-screen w-full flex items-center justify-center text-5xl font-bold text-white">
-						Loading...
+						<img src={suspenseImg} className="w-52" alt="" />
 					</div>
 				}
 			>

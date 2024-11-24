@@ -1,19 +1,13 @@
 import MainTitle from "@/components/MainTitle";
 import { Label } from "@/components/ui/label";
 import { contactDetails, ContactForm, useContactForm } from "../index";
-import { PageBreadCrumb } from "@/components/PageBreadCrumb";
 
 export const ContactContent = () => {
 	const { errors, handlePhoneInput, handleSubmit, onSumbit, register } =
 		useContactForm();
 
 	return (
-		<section className="bg-primary-black text-white pb-20">
-			<PageBreadCrumb
-				breadcrumbLinkName="Home"
-				breadcrumbLink="/"
-				breadcrumbPage="Contact us"
-			/>
+		<section className="bg-primary-black text-white py-10">
 			<div className="container mt-20">
 				<MainTitle
 					heading="LET'S GET IN TOUCH"
