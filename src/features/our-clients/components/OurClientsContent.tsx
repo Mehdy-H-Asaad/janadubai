@@ -18,7 +18,7 @@ export const OurClientsContent = () => {
 	};
 
 	return (
-		<section className="bg-primary-black pb-32">
+		<section className="bg-primary-black pb-10">
 			<PageBreadCrumb
 				breadcrumbLinkName="Home"
 				breadcrumbLink="/"

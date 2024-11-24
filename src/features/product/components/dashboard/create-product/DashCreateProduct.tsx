@@ -104,7 +104,6 @@ export const DashCreateProduct = () => {
 												onValueChange={value => {
 													// Pass the selected category ID to field.onChange to update form state
 													field.onChange(value);
-													console.log(value);
 												}}
 											>
 												<SelectTrigger className="w-[180px] bg-transparent border-gray-700">

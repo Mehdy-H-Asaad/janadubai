@@ -8,7 +8,7 @@ export const ListProjects = () => {
 	const { projects, isLoadingProjects } = useGetProjects({ limit: 10 });
 
 	return (
-		<div className="container mx-auto py-10">
+		<div className="container">
 			<MainTitle heading="List of your projects" subHeading="Projects" />
 			{isLoadingProjects ? (
 				<div className="flex flex-col gap-10 justify-center mt-10">

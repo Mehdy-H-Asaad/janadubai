@@ -33,7 +33,7 @@ export const HowWeWork = () => {
 						return (
 							<div
 								key={item.id}
-								className="text-white border-[3px] border-[#ffffff26] relative p-5"
+								className="text-white border-[3px] border-[#ffffff26] relative p-5 duration-300 transition-all hover:scale-95"
 							>
 								<h5 className="absolute text-golden -top-5 font-bold text-4xl left-1/2 -translate-x-1/2">
 									0{item.id}.

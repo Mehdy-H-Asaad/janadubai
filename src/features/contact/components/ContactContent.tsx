@@ -7,8 +7,8 @@ export const ContactContent = () => {
 		useContactForm();
 
 	return (
-		<section className="bg-primary-black text-white py-10">
-			<div className="container mt-20">
+		<section className="bg-primary-black text-white py-20">
+			<div className="container mb-20">
 				<MainTitle
 					heading="LET'S GET IN TOUCH"
 					subHeading="Our custom exhibition stands are designed to suit all your specifications and requirements."
@@ -82,7 +82,7 @@ export const ContactContent = () => {
 							</div>
 						)}
 					</div>
-					<button className="bg-white text-black py-1 px-5 w-fit font-bold rounded-md">
+					<button className="bg-white text-black py-1 px-5 w-fit font-bold rounded-md duration-300 hover:bg-golden hover:text-white">
 						Ask a question
 					</button>
 				</form>

@@ -8,7 +8,7 @@ export const ListCategories = () => {
 	const { categories, isLoadingCategories } = useGetCategories({});
 
 	return (
-		<div className="container mx-auto py-10">
+		<div className="container">
 			<MainTitle
 				heading="Categories of your products"
 				subHeading="All Categories"

@@ -29,12 +29,9 @@ export const Login = () => {
 				breadcrumbPage="My account"
 				breadcrumbLinkName="Home"
 			/>
-
-			<MainTitle
-				headingClassName="mt-10"
-				heading="Join our community"
-				subHeading="Login"
-			/>
+			<div className="mt-20">
+				<MainTitle heading="Join our community" subHeading="Login" />
+			</div>
 			<div className="container">
 				<div className="flex flex-col lg:flex-row justify-center items-center gap-20 min-h-[304px]">
 					{toggleAuth ? (
@@ -88,7 +85,7 @@ export const Login = () => {
 								/>
 
 								<Button
-									className="capitalize bg-golden hover:bg-golden w-full"
+									className="capitalize bg-golden duration-200 font-[600] hover:bg-white hover:text-black w-full"
 									type="submit"
 									disabled={isLoginPending}
 								>

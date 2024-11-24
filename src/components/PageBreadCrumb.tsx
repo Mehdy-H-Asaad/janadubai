@@ -23,7 +23,7 @@ export const PageBreadCrumb = ({
 			<BreadcrumbList>
 				<BreadcrumbItem>
 					<Link
-						className="text-white hover:text-white font-[600] text-xl md:text-2xl"
+						className="text-xl md:text-2xl capitalize text-white text-[#ffffffb3] font-[600] cursor-pointer duration-300 hover:text-white relative before:w-0 before:duration-300 before:h-[2px] before:bg-golden before:hover:w-full before:absolute before:bottom-0 before:left-0 before:content-['']"
 						to={breadcrumbLink}
 					>
 						{breadcrumbLinkName}

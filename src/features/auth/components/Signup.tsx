@@ -66,7 +66,7 @@ export const Signup = () => {
 
 					<Button
 						disabled={isSigning}
-						className="capitalize bg-golden hover:bg-golden w-full"
+						className="capitalize w-full bg-golden duration-200 font-[600] hover:bg-white hover:text-black"
 						type="submit"
 					>
 						{isSigning ? "Registering..." : "Signup"}

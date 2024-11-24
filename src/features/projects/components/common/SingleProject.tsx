@@ -70,7 +70,7 @@ export const SingleProject = () => {
 				{singleProjectData.name}
 			</div>
 			<div className="container">
-				<div className="flex flex-col lg:flex-row justify-between gap-10 mt-20">
+				<div className="flex flex-col lg:flex-row justify-between gap-10 my-20">
 					<div className="flex flex-col gap-5">
 						<img
 							className="w-full lg:size-[500px] flex-1 rounded-md"
@@ -126,15 +126,15 @@ export const SingleProject = () => {
 								</BreadcrumbItem>
 							</BreadcrumbList>
 						</Breadcrumb>
-						<h1 className="text-sm">{singleProjectData.name}</h1>
+						<h1>{singleProjectData.name}</h1>
 
-						<div className="text-sm">
-							Category : {singleProjectData.category_name}
+						<div>Category : {singleProjectData.category_name}</div>
+
+						<div className="flex flex-col gap-2">
+							{singleProjectData.description.map(desc => (
+								<p className=" text-[#ffffffb3]">{desc}</p>
+							))}
 						</div>
-
-						{singleProjectData.description.map(desc => (
-							<p className="text-sm text-[#ffffffb3]">{desc}</p>
-						))}
 					</div>
 				</div>
 			</div>

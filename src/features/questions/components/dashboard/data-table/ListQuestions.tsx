@@ -9,7 +9,7 @@ export const ListQuestions = () => {
 	const { questions, isLoadingQuestions } = useGetQuestions({});
 
 	return (
-		<div className="container mx-auto py-10">
+		<div className="container">
 			<MainTitle
 				heading="Questions from your customers"
 				subHeading="All questions"

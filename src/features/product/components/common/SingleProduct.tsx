@@ -16,6 +16,7 @@ import {
 	BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PageBreadCrumb } from "@/components/PageBreadCrumb";
 
 export const SingleProduct = () => {
 	const { id } = useParams<string>();
@@ -64,12 +65,17 @@ export const SingleProduct = () => {
 		);
 
 	return (
-		<div className="py-10 bg-primary-black text-white">
-			<div className="text-3xl sm:text-5xl font-medium text-center px-2 py-20 bg-black">
+		<div className="pb-10 bg-primary-black text-white">
+			<PageBreadCrumb
+				breadcrumbLinkName="Home"
+				breadcrumbLink="/"
+				breadcrumbPage={singleProductData.name}
+			/>
+			{/* <div className="text-3xl sm:text-5xl font-medium text-center px-2 py-20 bg-black">
 				{singleProductData.name}
-			</div>
+			</div> */}
 			<div className="container">
-				<div className="flex flex-col lg:flex-row justify-between gap-10 mt-20">
+				<div className="flex flex-col lg:flex-row justify-between gap-10 my-20">
 					<div className="flex flex-col gap-5">
 						<img
 							className="w-full lg:size-[500px] flex-1 rounded-md"
@@ -122,17 +128,15 @@ export const SingleProduct = () => {
 								</BreadcrumbItem>
 							</BreadcrumbList>
 						</Breadcrumb>
-						<h1 className="text-sm">{singleProductData.name}</h1>
+						<h1>{singleProductData.name}</h1>
 
-						<div className="text-sm">
-							Category : {singleProductData.category_name}
+						<div>Category : {singleProductData.category_name}</div>
+
+						<div className="flex flex-col gap-2">
+							{singleProductData.description.map(desc => (
+								<p className=" text-[#ffffffb3]">{desc}</p>
+							))}
 						</div>
-
-						{singleProductData.description.map(desc => (
-							<p className="text-sm text-[#ffffffb3]">{desc}</p>
-						))}
-
-						{/* <hr className="border-t  border-gray-700" /> */}
 					</div>
 				</div>
 			</div>

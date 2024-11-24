@@ -14,7 +14,7 @@ import {
 } from "@/shared/constants";
 const Footer = () => {
 	return (
-		<section className="bg-primary-black pt-5 text-white border-t border-gray-700">
+		<section className=" bg-black footer-bg pt-5 text-white border-t border-gray-700">
 			<div className="container">
 				<div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-7 ">
 					<div className="mb-8">
@@ -52,7 +52,11 @@ const Footer = () => {
 						<div className="flex flex-col gap-8">
 							{footerUsefulLinks.map(ele => {
 								return (
-									<Link key={ele.path} className="mx-auto w-fit" to={ele.path}>
+									<Link
+										key={ele.path}
+										className="mx-auto w-fit uppercase text-white text-[#ffffffb3] font-[600] cursor-pointer duration-300 hover:text-white relative before:w-0 before:duration-300 before:h-[2px] before:bg-golden before:hover:w-full before:absolute before:bottom-0 before:left-0 before:content-[''] "
+										to={ele.path}
+									>
 										{ele.title}
 									</Link>
 								);
@@ -64,7 +68,11 @@ const Footer = () => {
 						<div className="flex flex-col gap-8">
 							{footerUsefulInfo.map(ele => {
 								return (
-									<Link key={ele.path} className="mx-auto w-fit" to={ele.path}>
+									<Link
+										key={ele.path}
+										className="mx-auto w-fit uppercase text-white text-[#ffffffb3] font-[600] cursor-pointer duration-300 hover:text-white relative before:w-0 before:duration-300 before:h-[2px] before:bg-golden before:hover:w-full before:absolute before:bottom-0 before:left-0 before:content-['']"
+										to={ele.path}
+									>
 										{ele.title}
 									</Link>
 								);

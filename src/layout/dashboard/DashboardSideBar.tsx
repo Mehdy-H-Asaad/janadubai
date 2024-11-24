@@ -15,7 +15,7 @@ export const DashboardSideBar = () => {
 		<div className="flex-[2] hidden lg:block">
 			<div className="flex flex-col gap-10">
 				{dashboardSideBarLinks.map(heading => (
-					<div key={heading.title} className="flex-col gap-5 hidden lg:flex">
+					<div key={heading.title} className="flex-col gap-2 hidden lg:flex">
 						<div className="font-[600]">{heading.title}</div>
 						{heading.links.map(link => (
 							<Link

@@ -54,22 +54,22 @@ export const OUR_ADVANTAGES_DATA = [
 export const STATISTICS = [
 	{
 		id: "1",
-		Statistics: "1723",
+		Statistics: 1723,
 		title: "PROJECTS",
 	},
 	{
 		id: "2",
-		Statistics: "2000",
+		Statistics: 2000,
 		title: "HAPPY COSTUMERS",
 	},
 	{
 		id: "3",
-		Statistics: "190",
+		Statistics: 190,
 		title: "COMPANY WORK WITH US",
 	},
 	{
 		id: "4",
-		Statistics: "750",
+		Statistics: 750,
 		title: "PROJECTS COMPLETED",
 	},
 ];

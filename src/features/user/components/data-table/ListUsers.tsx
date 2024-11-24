@@ -8,7 +8,7 @@ export const ListUsers = () => {
 	const { isLoadingUsers, users } = useGetUsers();
 
 	return (
-		<div className="container mx-auto py-10">
+		<div className="container">
 			<MainTitle heading="List of your users" subHeading="Users" />
 			{isLoadingUsers ? (
 				<div className="flex flex-col gap-10 justify-center mt-10">

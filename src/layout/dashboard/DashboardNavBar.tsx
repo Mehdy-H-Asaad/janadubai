@@ -23,8 +23,8 @@ export const DashboardNavBar = () => {
 	}, [location]);
 
 	return (
-		<nav>
-			<div className=" flex items-center justify-between">
+		<nav className="bg-primary-black h-24 flex items-center border-b border-b-[#ffffff26]">
+			<div className=" container flex items-center justify-between">
 				<Link to={"/"}>
 					<img className="w-52 hidden lg:block" src={Logo} alt="" />
 				</Link>
