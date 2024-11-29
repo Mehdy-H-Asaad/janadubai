@@ -17,6 +17,9 @@ module.exports = {
 			},
 		},
 		extend: {
+			transitionDuration: {
+				2000: "2000ms",
+			},
 			colors: {
 				"primary-black": "#1a1a1a",
 				golden: "#e5c269",

@@ -109,9 +109,10 @@ export function DataTableCategories<TData, TValue>({
 					</DialogTrigger>
 					<DialogContent className="sm:max-w-[425px] bg-black text-white">
 						<DialogHeader>
-							<DialogTitle>Edit profile</DialogTitle>
+							<DialogTitle>Create category</DialogTitle>
 							<DialogDescription>
-								Make changes to your profile here. Click save when you're done.
+								Make changes to your categories here. Click save when you're
+								done.
 							</DialogDescription>
 						</DialogHeader>
 						<Form {...createCategoryForm}>
@@ -165,7 +166,7 @@ export function DataTableCategories<TData, TValue>({
 
 								{/* <DialogFooter> */}
 								{/* <Button> */}
-								<MainButton type="submit" title="Save changes" />
+								<MainButton type="submit" title="Create category" />
 								{/* </Button> */}
 								{/* </DialogFooter> */}
 							</form>

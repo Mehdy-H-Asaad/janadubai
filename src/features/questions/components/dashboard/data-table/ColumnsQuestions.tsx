@@ -1,10 +1,11 @@
 import { ColumnDef } from "@tanstack/react-table";
+import { FaCheck } from "react-icons/fa";
+import { RxCross2 } from "react-icons/rx";
 
 import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
@@ -31,6 +32,19 @@ import {
 import { useReplyForm } from "../../../index";
 import { TQuestionDTO } from "@/features/questions/types";
 import { MainButton } from "@/components/MainButton";
+import {
+	AlertDialogHeader,
+	AlertDialogFooter,
+} from "@/components/ui/alert-dialog";
+import {
+	AlertDialog,
+	AlertDialogTrigger,
+	AlertDialogContent,
+	AlertDialogTitle,
+	AlertDialogDescription,
+	AlertDialogCancel,
+	AlertDialogAction,
+} from "@/components/ui/alert-dialog";
 
 export const ColumnsQuestions: ColumnDef<TQuestionDTO>[] = [
 	{
@@ -48,6 +62,17 @@ export const ColumnsQuestions: ColumnDef<TQuestionDTO>[] = [
 	{
 		accessorKey: "phone",
 		header: "Phone",
+	},
+	{
+		accessorKey: "answered",
+		header: "Answered",
+		cell: ({ row }) => {
+			if (row.original.answered) {
+				return <FaCheck />;
+			} else {
+				return <RxCross2 size={18} />;
+			}
+		},
 	},
 
 	{
@@ -69,14 +94,38 @@ export const ColumnsQuestions: ColumnDef<TQuestionDTO>[] = [
 						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent align="end">
-						<DropdownMenuLabel>Actions</DropdownMenuLabel>
+						<DropdownMenuLabel>Options</DropdownMenuLabel>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem
-							onClick={() => deleteQuestion(question.id)}
-							className="bg-red-600 text-white hover:!bg-red-600 hover:!text-white cursor-pointer"
-						>
-							Delete question
-						</DropdownMenuItem>
+						{/* <div> */}
+						<AlertDialog>
+							<AlertDialogTrigger className="bg-red-600 duration-200 text-white hover:!bg-red-800 hover:!text-white cursor-pointer px-2 py-1 flex rounded-sm">
+								Delete question
+							</AlertDialogTrigger>
+							<AlertDialogContent className="bg-black text-white">
+								<AlertDialogHeader>
+									<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+									<AlertDialogDescription>
+										This action cannot be undone. This will permanently delete
+										your account and remove your data from our servers.
+									</AlertDialogDescription>
+								</AlertDialogHeader>
+								<AlertDialogFooter>
+									<AlertDialogCancel className="bg-black text-white duration-200">
+										Cancel
+									</AlertDialogCancel>
+									<AlertDialogAction
+										asChild
+										onClick={() => deleteQuestion(question.id)}
+									>
+										<MainButton
+											className="!bg-golden duration-200 hover:!bg-white hover:text-black"
+											title="Continue"
+										/>
+									</AlertDialogAction>
+								</AlertDialogFooter>
+							</AlertDialogContent>
+						</AlertDialog>
+						{/* </div> */}
 						<Dialog>
 							<DialogTrigger asChild>
 								<Button className=" bg-transparent text-black hover:bg-transparent">

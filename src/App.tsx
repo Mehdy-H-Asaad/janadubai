@@ -6,6 +6,7 @@ import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import { DashboardRoutes } from "./routes/DashboardRoutes";
 import suspenseImg from "../public/imgs/Logo2.png.webp";
+import { SendMessagePage } from "./pages/SendMessagePage";
 // Lazy loading of page components
 const Home = lazy(() => import("./pages/Homepage"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -36,6 +37,7 @@ function App() {
 				{!isDashboardPath && <Navbar />}
 
 				<Routes>
+					<Route path="/chat" element={<SendMessagePage />} />
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<AboutPage />} />
 					<Route path="/clients" element={<OurClientsPage />} />

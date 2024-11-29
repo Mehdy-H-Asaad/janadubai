@@ -80,7 +80,7 @@ export const UpdateProductDialog = (product: TProductDTO) => {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button className="w-full bg-transparent text-black hover:bg-transparent">
+				<Button className="w-full bg-transparent duration-200 my-1 text-black hover:bg-black hover:text-white">
 					Edit Product
 				</Button>
 			</DialogTrigger>
@@ -236,7 +236,7 @@ export const UpdateProductDialog = (product: TProductDTO) => {
 										))}
 									</div>
 								</div>
-								<MainButton title="Update Project" />
+								<MainButton title="Update product" />
 							</form>
 						</Form>
 					</div>

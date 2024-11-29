@@ -8,8 +8,14 @@
 	font-family: "Montserrat", sans-serif;
 }
 
-.hero-bg {
+.hero-bg-one {
 	background-image: url("../public/imgs/home-cinema-2-2.webp");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.hero-bg-two {
+	background-image: url("../public/imgs/hero-cinema-9.jpg.webp");
 	background-position: center;
 	background-repeat: no-repeat;
 }

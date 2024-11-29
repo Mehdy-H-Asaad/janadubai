@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
@@ -14,6 +13,18 @@ import { useDeleteProduct } from "@/features/product/hooks/useDeleteProduct";
 import { TProductDTO } from "@/features/product/types";
 
 import { UpdateProductDialog } from "../../../index";
+import {
+	AlertDialog,
+	AlertDialogAction,
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { MainButton } from "@/components/MainButton";
 
 export const ColumnsProduct: ColumnDef<TProductDTO>[] = [
 	{
@@ -57,14 +68,36 @@ export const ColumnsProduct: ColumnDef<TProductDTO>[] = [
 						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent align="end">
-						<DropdownMenuLabel>Actions</DropdownMenuLabel>
+						<DropdownMenuLabel>Options</DropdownMenuLabel>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem
-							onClick={() => deleteProduct(product.id)}
-							className="bg-red-600 text-white hover:!bg-red-600 hover:!text-white cursor-pointer"
-						>
-							Delete product
-						</DropdownMenuItem>
+						<AlertDialog>
+							<AlertDialogTrigger className="bg-red-600 duration-200 text-white hover:!bg-red-800 hover:!text-white cursor-pointer px-2 py-1 flex rounded-sm">
+								Delete product
+							</AlertDialogTrigger>
+							<AlertDialogContent className="bg-black text-white">
+								<AlertDialogHeader>
+									<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+									<AlertDialogDescription>
+										This action cannot be undone. This will permanently delete
+										your account and remove your data from our servers.
+									</AlertDialogDescription>
+								</AlertDialogHeader>
+								<AlertDialogFooter>
+									<AlertDialogCancel className="bg-black text-white duration-200">
+										Cancel
+									</AlertDialogCancel>
+									<AlertDialogAction
+										asChild
+										onClick={() => deleteProduct(product.id)}
+									>
+										<MainButton
+											className="!bg-golden duration-200 hover:!bg-white hover:text-black"
+											title="Continue"
+										/>
+									</AlertDialogAction>
+								</AlertDialogFooter>
+							</AlertDialogContent>
+						</AlertDialog>
 						<UpdateProductDialog {...product} />
 					</DropdownMenuContent>
 				</DropdownMenu>

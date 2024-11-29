@@ -81,7 +81,7 @@ export const UpdateProjectDialog = (project: TProjectDTO) => {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button className="w-full bg-transparent text-black hover:bg-transparent">
+				<Button className="w-full bg-transparent duration-200 my-1 text-black hover:bg-black hover:text-white ">
 					Edit Project
 				</Button>
 			</DialogTrigger>
