@@ -24,7 +24,7 @@ export const SendMessage = () => {
 
 	const handleSend = () => {
 		if (inputMessage.trim()) {
-			sendMessage({ message: inputMessage, to_user: 38 }); // Adjust `to_user` as required
+			sendMessage({ message: inputMessage, receiver: 35 }); // Adjust `to_user` as required
 			setInputMessage("");
 		}
 	};

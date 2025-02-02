@@ -8,7 +8,7 @@ import axios from "axios";
 // });
 
 export const axiosClient = axios.create({
-	baseURL: "https://web-mown68cp2cv9.up-de-fra1-k8s-1.apps.run-on-seenode.com",
+	baseURL: "https://jana-dubai.vercel.app",
 	headers: {
 		"Content-Type": "application/json",
 	},
